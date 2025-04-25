@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects | Chuks Official Portfolio</title>
+  <!-- Updated Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="LOGO (2025_02_08 19_48_23 UTC).webp">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', sans-serif;
+      background-color: #111;
+      color: #fff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      padding: 2rem;
+      font-size: 3rem;
+      text-shadow: 0 0 10px white;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff;
+      }
+      to {
+        text-shadow: 0 0 20px #00f7ff, 0 0 30px #00f7ff;
+      }
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 10px #00f7ff55;
+      animation: slideDown 1s ease-out;
+    }
+    .logo {
+      font-size: 1.6rem;
+      color: #00f7ff;
+      font-weight: bold;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .logo span {
+      color: #fff;
+      text-shadow: 0 0 10px white;
+      
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #ccc;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #00f7ff;
+      text-shadow: 0 0 5px #00f7ff;
+      transform: scale(1.1);
+    }
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color:  #00f7ff;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    nav ul li a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;}
+    /* Navbar */
+    
+    nav a {
+      text-decoration: none;
+      color: #e0b24c;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+  
+    
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: 70px; /* to make space for the navbar */
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+      height: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .description {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 8px;
+      text-shadow: 0 0 5px white;
+      animation: fadeInDescription 2s ease-in-out;
+    }
+
+    @keyframes fadeInDescription {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    footer {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    footer .social-icons a {
+      color: #00f7ff;
+      font-size: 1.5rem;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #00f7ff;
+    }
+
+    .typing {
+      border-right: 2px solid #0ff;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      text-shadow: 0 0 5px #00f7ff
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    /* Animation for Social Icons */
+  
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+  <script>
+    let index = 0;
+    function showSlide() {
+      const slides = document.querySelector('.slides');
+      const totalSlides = slides.children.length;
+      index = (index + 1) % totalSlides;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+    setInterval(showSlide, 3000);
+  </script>
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <header class="navbar">
+    <div class="logo">Chuks .N. <span>Prosper</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="Myportfolio.html">Home</a></li>
+        <li><a href="aboutme.html">About</a></li>
+        <li><a href="myprojects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+     
+        <li><a href="contactme.html">Contact</a></li>
+        <li><a href="blog2.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1 class="typing">My Projects</h1>
+
+  <div class="slider">
+    <div class="slides">
+      <div class="slide" >
+        <img src="port (2025_02_08 19_48_23 UTC).PNG">
+        <div class="description">Portfolio Website with animated navbar and typing intro</div>
+      </div>
+      <div class="slide" >
+        <img src="PRODUCT (2025_02_08 19_48_23 UTC).PNG">
+        <div class="description">Product Landing Page</div>
+      </div>
+      <div class="slide">
+        <img src="digital clock.PNG">
+        <div class="description">A Digital Clock With Glowing Features</div>
+      </div>
+      <div class="slide" >
+        <img src="shopping site.PNG">
+        <div class="description">A Shopping Site With Chatbot</div>
+      </div>
+      <div class="slide" >
+        <img src="quiz app.PNG">
+        <div class="description">Quiz App with timer, score, and answer review</div>
+      </div>
+      <div class="slide">
+        <img src="login fom.PNG">
+        <div class="description">A Simple Login Form</div>
+      </div>
+      <div class="slide" >
+        <img src="emoji translator.PNG">
+        <div class="description">Emoji Translator</div>
+      </div>
+      <div class="slide"  >
+        <img src="study ai.PNG">
+        <div class="description">AI-powered Study Chatbot</div>
+      </div>
+      <div class="slide"  >
+        <img src="sign up.PNG">
+        <div class="description">Sign Up Form</div>
+      </div>
+      <div class="slide"  >
+        <img src="glass.PNG">
+        <div class="description">GlassMorphism UI Template</div>
+      </div>
+     
+    </div>
+  </div>
+
+  <footer>
+    
+
+
+  <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/2349049720367" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <p>© 2025 Chuks Official. All rights reserved.</p>
+
+  </div></footer>
+
+</body>
+</html>

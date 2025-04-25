@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Chuks Official Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="LOGO (2025_02_08 19_48_23 UTC).webp">
+  <style>
+    /* RESET + BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Times New Roman', serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+    }
+
+    /* NAVBAR */
+   /* Navbar */
+.navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 10px #00f7ff55;
+      animation: slideDown 1s ease-out;
+    }
+    .logo {
+      font-size: 1.6rem;
+      color: #00f7ff;
+      font-weight: bold;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .logo span {
+      color: #fff;
+      text-shadow: 0 0 10px white;
+      
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #ccc;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #00f7ff;
+      text-shadow: 0 0 5px #00f7ff;
+      transform: scale(1.1);
+    }
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color:  #00f7ff;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    nav ul li a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;}
+    /* Navbar */
+    
+    nav a {
+      text-decoration: none;
+      color: #e0b24c;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+  
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    /* About Section */
+    .about {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #0d0d0d, #1f1f1f);
+    }
+
+    .about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 1.5s ease-in;
+      color: #00f7ff;
+      text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, 0 0 30px #00f7ff;
+    }
+
+    .about .typing-effect {
+      font-size: 1.4rem;
+      color: #f0f0f0;
+      font-weight: 400;
+      opacity: 0;
+      animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite, glowText 1.5s ease-in-out infinite alternate;
+    }
+
+    .about p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      animation: slideIn 2s ease-in-out;
+      text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, 0 0 30px #00f7ff;
+    }
+
+    .about .section-title {
+      font-size: 2rem;
+      color: #00f7ff;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 1s ease-in-out;
+      text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, 0 0 30px #00f7ff;
+
+    }
+
+    .about .skills-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      animation: fadeUp 2s ease-in-out 1.5s forwards;
+      text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, 0 0 30px #00f7ff;
+
+    }
+
+    .about .skills-list div {
+      background-color: #333;
+      padding: 1.5rem;
+      border-radius: 10px;
+      max-width: 250px;
+      width: 100%;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .about .skills-list div:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px 5px rgba(0, 247, 255, 0.8);
+    }
+
+    .about .skills-list div h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #00f7ff;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111;
+      padding: 2rem;
+      text-align: center;
+      animation: fadeInUp 1.5s ease-in-out;
+     
+
+    }
+
+    footer .social-icons a {
+      color: #00f7ff;
+      font-size: 1.5rem;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #00f7ff;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  
+    @keyframes glowText {
+      0% {
+        text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, 0 0 30px #00f7ff;
+      }
+      100% {
+        text-shadow: 0 0 15px #00f7ff, 0 0 25px #00f7ff, 0 0 35px #00f7ff;
+      }
+    }
+    .hero-content {
+      max-width: 1500px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+     
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+    .typing {
+      border-right: 2px solid #0ff;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      text-shadow: 0 0 5px #00f7ff
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Chuks .N. <span>Prosper</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="Myportfolio.html">Home</a></li>
+        <li><a href="aboutme.html">About</a></li>
+        <li><a href="myprojects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        
+        <li><a href="contactme.html">Contact</a></li>
+        <li><a href="blog2.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="hero-content">
+    <h2 class="typing">About Me</h2>
+    
+    
+    <div class="write-up">
+      <p>
+        Hi, I'm Chuks Official, a passionate web developer and tech enthusiast. Over the past few years, I’ve been honing my skills in the digital space, learning new technologies, and bringing innovative solutions to life through code. My mission is to bridge the gap between creativity and functionality, by crafting websites and applications that not only look amazing but perform flawlessly.
+      </p>
+    </div>
+
+    <div class="section-title">Hobbies</div>
+    <p>
+      I have a variety of hobbies that keep me balanced and energized! These include coding, gaming, photography, reading about technology, and experimenting with new tech projects. I love learning new things and constantly challenge myself to grow. When I'm not coding, you’ll probably find me playing strategy games, exploring new software tools, or diving into tech blogs and tutorials to stay updated.
+    </p>
+
+    <div class="section-title">Role Model</div>
+    <p>
+      My role model is Elon Musk. His relentless pursuit of innovation and his ability to take on monumental challenges are truly inspiring. From building electric cars to launching rockets into space, Musk is someone who has redefined what’s possible. His resilience, vision, and commitment to making the world a better place through technology inspire me every day.
+    </p>
+    </div>
+
+    <div class="section-title">Skills</div>
+    <div class="skills-list">
+      <div>
+        <h3>Front-End Development</h3>
+        <p>HTML, CSS, JavaScript.</p>
+      </div>
+      <div>
+        <h3>Web Design</h3>
+        <p>UI/UX Design, Web Graphics(Graphics Designing), Responsive Design.</p>
+      </div>
+      <div>
+        <h3>Problem Solving</h3>
+        <p>Creative Thinking.</p>
+        <p>Team Collaboration</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      
+  <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/2349049720367" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+     <p>© 2025 Chuks Official. All rights reserved.</p>
+
+    </footer> </body> </html>
